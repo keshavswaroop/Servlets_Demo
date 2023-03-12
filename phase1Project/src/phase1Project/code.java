@@ -33,16 +33,17 @@ public class code {
 				int num = s.nextInt();
 				for(int i=1;i<=num;i++) {
 					System.out.println("Enter the file " + i + " to be added");
-					String addfile = s.nextLine();
+					String addfile = s.next();
 					filelist.add(addfile);
-					i=i+1;
+					
 				}
+				
 				break;
 			case 3:
 				System.out.println("The available files are: ");
 				System.out.println(filelist);
 				System.out.println("Enter the file name to be deleted: ");
-				String delfile = s.nextLine();
+				String delfile = s.next();
 				filelist.remove(delfile);
 				System.out.println("The remaining files are: ");
 				System.out.println(filelist);
@@ -50,7 +51,7 @@ public class code {
 				
 			case 4:
 				System.out.println("Enter the name of the file to be searched: ");
-				String filesearch = s.nextLine();
+				String filesearch = s.next();
 				Boolean yesno = filelist.contains(filesearch);
 				if (yesno == true) {
 					System.out.println("The file " + filesearch + " is available");
