@@ -45,38 +45,16 @@ public class code {
 					
 					case 2:
 						
-						System.out.println("Enter the number of files to be added");
-						int num = s.nextInt();
-						for(int i=1;i<=num;i++) {
-							System.out.println("Enter the file " + i + " to be added");
-							String addfile = s.next();
-							filelist.add(addfile);
-							
-						}
+						addfiles(filelist, s);
 						break;
 						
 					case 3:
-						System.out.println("The available files are: ");
-						System.out.println(filelist);
-						System.out.println("Enter the file name to be deleted: ");
-						String delfile = s.next();
-						filelist.remove(delfile);
-						System.out.println("The remaining files are: ");
-						System.out.println(filelist);
+						deletefile(filelist, s);
 						break;
 						
 					case 4:
 						
-						System.out.println("Enter the name of the file to be searched: ");
-						String filesearch = s.next();
-						Boolean yesno = filelist.contains(filesearch);
-						if (yesno == true) {
-							System.out.println("The file " + filesearch + " is available");
-						
-						}
-						else {
-							System.out.println("The file " + filesearch + " is not available");
-						}
+						searchfile(filelist, s);
 					break;
 					
 					case 5:
@@ -105,6 +83,40 @@ public class code {
 		}	
 		
 
+	}
+
+	private static void searchfile(ArrayList<String> filelist, Scanner s) {
+		System.out.println("Enter the name of the file to be searched: ");
+		String filesearch = s.next();
+		Boolean yesno = filelist.contains(filesearch);
+		if (yesno == true) {
+			System.out.println("The file " + filesearch + " is available");
+		
+		}
+		else {
+			System.out.println("The file " + filesearch + " is not available");
+		}
+	}
+
+	private static void deletefile(ArrayList<String> filelist, Scanner s) {
+		System.out.println("The available files are: ");
+		System.out.println(filelist);
+		System.out.println("Enter the file name to be deleted: ");
+		String delfile = s.next();
+		filelist.remove(delfile);
+		System.out.println("The remaining files are: ");
+		System.out.println(filelist);
+	}
+
+	private static void addfiles(ArrayList<String> filelist, Scanner s) {
+		System.out.println("Enter the number of files to be added");
+		int num = s.nextInt();
+		for(int i=1;i<=num;i++) {
+			System.out.println("Enter the file " + i + " to be added");
+			String addfile = s.next();
+			filelist.add(addfile);
+			
+		}
 	}
 	
 }
