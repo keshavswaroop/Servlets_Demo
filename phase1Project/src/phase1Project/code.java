@@ -18,10 +18,12 @@ public class code {
 		filelist.add("abc");
 		filelist.add("def");
 		filelist.add("ghi");
+		System.out.println("--------Welcome-------");
+		System.out.println("Developer Details:\nName: Swaroop S\nEmail: swas@teksystems.com\nContact: 8296342910");
 		
 		while(flag) {
-			System.out.println("--------Welcome-------");
-			System.out.println("Menu:");
+			
+			System.out.println("\n\n----------Menu----------");
 			System.out.println("1. Sort and list the file\n2. FileOperations\n3. Exit");
 			
 			System.out.println("Please enter your choice: ");
@@ -35,7 +37,7 @@ public class code {
 				break;
 			case 2: 
 				while(flag) {
-					System.out.println("--------FileOperations--------");
+					System.out.println("----------FileOperations----------");
 					System.out.println("1. List the files\n2. Add the files\n3. Delete the files\n4. Search the file\n5. Return to the main menu");
 					int ch1 = s.nextInt();
 					switch(ch1) {
@@ -103,9 +105,15 @@ public class code {
 		System.out.println(filelist);
 		System.out.println("Enter the file name to be deleted: ");
 		String delfile = s.next();
-		filelist.remove(delfile);
-		System.out.println("The remaining files are: ");
-		System.out.println(filelist);
+		Boolean yesno = filelist.contains(delfile);
+		if(yesno == true) {
+			filelist.remove(delfile);
+			System.out.println("The remaining files are: ");
+			System.out.println(filelist);
+		}
+		else {
+			System.out.println("File not available");
+		}
 	}
 
 	private static void addfiles(ArrayList<String> filelist, Scanner s) {
